@@ -65,9 +65,7 @@ def go(config: DictConfig):
             pass
 
         if "data_check" in active_steps:
-            ##################
-            # Implement here #
-            ##################
+
             _ = mlflow.run(
                 os.path.join(hydra.utils.get_original_cwd(), "src", "data_check"),
                 "main",

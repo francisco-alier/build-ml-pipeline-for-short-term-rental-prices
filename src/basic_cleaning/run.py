@@ -5,7 +5,7 @@ Download from W&B the raw dataset and apply some basic data cleaning, exporting 
 import argparse
 import logging
 import wandb
-
+import pandas as pd
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)-15s %(message)s")
 logger = logging.getLogger()
@@ -56,43 +56,43 @@ if __name__ == "__main__":
 
     parser.add_argument(
         "--input_artifact", 
-        type=str
+        type=str,
         help="the artifact representing the raw data" ,
         required=True
     )
 
     parser.add_argument(
         "--output_artifact", 
-        type=str
+        type=str,
         help="the artifact after data cleaning",
         required=True
     )
 
     parser.add_argument(
         "--output_type", 
-        type=str
-        help=" The WandB type for the output artifact""
+        type=str,
+        help="The WandB type for the output artifact",
         required=True
     )
 
     parser.add_argument(
         "--output_description", 
-        type=str
-        help="Description for the output artifact"
+        type=str,
+        help="Description for the output artifact",
         required=True
     )
 
     parser.add_argument(
         "--min_price", 
-        type=float
-        help="minimum price to cap the price"
+        type=float,
+        help="minimum price to cap the price",
         required=True
     )
 
     parser.add_argument(
         "--max_price", 
-        type=float
-        help="maximum price allowed"
+        type=float,
+        help="maximum price allowed",
         required=True
     )
 
