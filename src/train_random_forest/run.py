@@ -42,6 +42,7 @@ logger = logging.getLogger()
 
 def go(args):
 
+    #https://wandb.ai/adrishd/hydra-example/reports/Configuring-W-B-Projects-with-Hydra--VmlldzoxNTA2MzQw
     run = wandb.init(job_type="train_random_forest")
     run.config.update(args)
 
@@ -117,7 +118,7 @@ def go(args):
     # you just created to add the "random_forest_dir" directory to the artifact, and finally use
     # run.log_artifact to log the artifact to the run
     logger.info("Uploading model")
-
+    
     artifact = wandb.Artifact(
             args.output_artifact,
             type="model_export",
@@ -148,6 +149,8 @@ def go(args):
           "feature_importance": wandb.Image(fig_feat_imp),
         }
     )
+
+    wandb.finish()
 
 
 def plot_feature_importance(pipe, feat_names):
