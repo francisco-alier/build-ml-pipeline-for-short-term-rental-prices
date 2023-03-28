@@ -6,28 +6,28 @@ entry_points:
     parameters:
 
       input_artifact:
-        description: ## ADD DESCRIPTION
+        description: the artifact representing the raw data
         type: string
 
       output_artifact:
-        description: ## ADD DESCRIPTION
+        description: the artifact after data cleaning
         type: string
 
       output_type:
-        description: ## ADD DESCRIPTION
+        description: The WandB type for the output artifact
         type: string
 
       output_description:
-        description: ## ADD DESCRIPTION
+        description: Description for the output artifact
         type: string
 
       min_price:
-        description: ## ADD DESCRIPTION
-        type: string
+        description: minimum price to cap the price
+        type: float
 
       max_price:
-        description: ## ADD DESCRIPTION
-        type: string
+        description: maximum price allowed
+        type: float
 
 
     command: >-
